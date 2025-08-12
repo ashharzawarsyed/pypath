@@ -141,6 +141,7 @@ export type UserType = {
 export type UserDataType = {
   name: string;
   image?: any;
+  preferences?: string[];
 };
 
 export type AuthContextType = {
@@ -156,6 +157,9 @@ export type AuthContextType = {
     name: string
   ) => Promise<{ success: boolean; msg?: string }>;
   updateUserData: (userId: string) => Promise<void>;
+  loading: boolean;
+  hasCompletedOnboarding: boolean;
+  markOnboardingComplete: () => Promise<void>;
 };
 
 export type ResponseType = {
@@ -173,4 +177,26 @@ export type WalletType = {
   image: any;
   uid?: string;
   created?: Date;
+};
+
+export type Course = {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
+  duration: string;
+  lessons: number;
+  image?: string;
+  topics: string[];
+  createdAt?: Date;
+  isPopular?: boolean;
+};
+
+export type UserEnrollment = {
+  userId: string;
+  courseId: string;
+  enrolledAt: Date;
+  progress: number;
+  currentLesson: number;
+  completed: boolean;
 };

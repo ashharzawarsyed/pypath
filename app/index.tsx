@@ -1,24 +1,25 @@
+import Loading from "@/components/Loading";
 import { colors } from "@/constants/theme";
+import { useAuth } from "@/contexts/authContext";
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
 const Index = () => {
-  // const router = useRouter();
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     router.push("/(auth)/welcome");
-  //   }, 2000); // Navigate to welcome screen after 2 seconds
-  // }, [router]);
+  const { loading } = useAuth();
 
-  return (
-    <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        resizeMode="contain"
-        source={require("../assets/images/splashImage.png")}
-      />
-    </View>
-  );
+  if (loading) {
+    return (
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          resizeMode="contain"
+          source={require("../assets/images/welcome.png")}
+        />
+      </View>
+    );
+  }
+
+  return <Loading size="large" />;
 };
 
 export default Index;

@@ -36,10 +36,10 @@ const Welcome = () => {
             style={{ alignItems: "center" }}
           >
             <Typo size={30} fontWeight={"800"}>
-              Always take Control
+              Master Python
             </Typo>
             <Typo size={30} fontWeight={"800"}>
-              of your finances
+              with confidence
             </Typo>
           </Animated.View>
           {/*child 2 of footer view */}
@@ -51,10 +51,10 @@ const Welcome = () => {
             style={{ alignItems: "center", gap: 2 }}
           >
             <Typo size={17} color={colors.textLight}>
-              Finances must be arranged to set a better
+              Learn Python programming step by step
             </Typo>
             <Typo size={17} color={colors.textLight}>
-              lifestyle in future
+              and build your coding skills
             </Typo>
           </Animated.View>
           {/*child 3 of footer view */}
@@ -68,7 +68,7 @@ const Welcome = () => {
           >
             <Button onPress={() => router.push("/(auth)/register")}>
               <Typo size={22} color={colors.neutral900} fontWeight={"600"}>
-                Get Started
+                Start Learning
               </Typo>
             </Button>
           </Animated.View>
