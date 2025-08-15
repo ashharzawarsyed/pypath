@@ -335,6 +335,19 @@ const CoursesHomeScreen = () => {
             <Typo size={32} fontWeight="800" style={styles.heading}>
               Courses
             </Typo>
+
+            {/* Optional: Add a notification or profile button on the right */}
+            <TouchableOpacity
+              style={styles.rightButton}
+              onPress={() => setDrawerVisible(true)}
+              activeOpacity={0.7}
+            >
+              <Ionicons
+                name="notifications-outline"
+                size={24}
+                color={colors.white}
+              />
+            </TouchableOpacity>
           </Animated.View>
 
           {/* Course List */}
@@ -418,6 +431,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between", // Changed to space-between for better layout
     marginBottom: spacingY._35,
     paddingTop: spacingY._15,
   },
@@ -427,8 +441,16 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
+  rightButton: {
+    marginLeft: spacingX._15,
+    padding: spacingX._10,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+  },
   heading: {
     color: colors.white,
+    flex: 1, // Takes remaining space
+    textAlign: "center", // Center the title
   },
   listContainer: {
     flex: 1,

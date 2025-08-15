@@ -1,18 +1,19 @@
 import ScreenWrapper from "@/components/ScreenWrapper";
 import Typo from "@/components/Typo";
 import { colors, spacingX, spacingY } from "@/constants/theme";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const Statistics = () => {
+const Progress = () => {
   return (
     <ScreenWrapper>
       <View style={styles.container}>
         <Typo size={28} fontWeight="800" style={styles.heading}>
-          Statistics
+          Progress
         </Typo>
         <View style={styles.content}>
           <Typo size={16} color={colors.textLight}>
-            Your learning progress and statistics will be displayed here.
+            Your learning progress and achievements will be displayed here.
           </Typo>
         </View>
       </View>
@@ -20,7 +21,7 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default Progress;
 
 const styles = StyleSheet.create({
   container: {

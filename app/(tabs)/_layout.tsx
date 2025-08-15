@@ -6,12 +6,14 @@ import { StyleSheet } from "react-native";
 const TabLayout = () => {
   return (
     <Tabs
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: { display: "none" }, // Hide the default tab bar completely
+      }}
       tabBar={(props) => <CustomTabs {...props} />}
     >
       <Tabs.Screen name="index" />
-      <Tabs.Screen name="statistics" />
-      <Tabs.Screen name="wallet" />
+      <Tabs.Screen name="progress" />
       <Tabs.Screen name="profile" />
     </Tabs>
   );
