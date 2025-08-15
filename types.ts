@@ -168,7 +168,6 @@ export type ResponseType = {
   msg?: string;
 };
 
-
 export type Course = {
   id: string;
   title: string;
@@ -180,6 +179,63 @@ export type Course = {
   topics: string[];
   createdAt?: Date;
   isPopular?: boolean;
+};
+
+export type Lecture = {
+  id: string;
+  title: string;
+  duration: string;
+  completed: boolean;
+  content?: string;
+  videoUrl?: string;
+  order: number;
+  hasQuiz: boolean;
+  isLocked: boolean;
+};
+
+export type SubCourse = {
+  id: string;
+  title: string;
+  duration: string;
+  completed: boolean;
+  lectures: Lecture[];
+  order: number;
+  isLocked: boolean;
+};
+
+export type QuizQuestion = {
+  question: string;
+  options: string[];
+  correctAnswer: number;
+};
+
+export type Quiz = {
+  id: string;
+  questions: QuizQuestion[];
+  passingScore: number;
+  maxAttempts: number;
+};
+
+export type QuizAttempt = {
+  userId: string;
+  courseId: string;
+  subCourseId: string;
+  lectureId: string;
+  attempts: number;
+  lastScore: number;
+  passed: boolean;
+  lastAttemptAt: Date;
+};
+
+export type UserProgress = {
+  userId: string;
+  courseId: string;
+  subCourseId?: string;
+  lectureId?: string;
+  progress: number;
+  completedLectures: string[];
+  completedSubCourses: string[];
+  lastAccessedAt: Date;
 };
 
 export type UserEnrollment = {
